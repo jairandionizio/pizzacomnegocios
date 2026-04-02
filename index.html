@@ -73,18 +73,14 @@
     }
 
     .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.05em;
-      color: var(--dourado);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
     }
 
-    .nav-logo span {
-      color: var(--laranja);
+    .nav-logo img {
+      height: 48px;
+      width: auto;
     }
 
     .nav-links {
@@ -1080,7 +1076,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">🍕 Pizza com <span>Negócios</span></a>
+    <a href="#hero" class="nav-logo"><img src="logo_PcN_Sem_F.png" alt="Pizza com Negócios" /></a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#palestrantes">Palestrantes</a></li>
@@ -1410,7 +1406,7 @@
   <script>
     // ── COUNTDOWN ──
     function updateCountdown() {
-      const target = new Date('2025-04-17T19:00:00-03:00');
+      const target = new Date('2026-04-17T19:00:00-03:00');
       const now = new Date();
       const diff = target - now;
 
