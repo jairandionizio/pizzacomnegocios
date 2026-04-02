@@ -1046,6 +1046,35 @@
     }
   </style>
 </head>
+<script>
+  const evento = new Date('2026-04-17T19:00:00');
+
+  function atualizarContador() {
+    const agora = new Date();
+    const diff = evento - agora;
+
+    if (diff <= 0) {
+      document.getElementById('cd-dias').textContent = '00';
+      document.getElementById('cd-horas').textContent = '00';
+      document.getElementById('cd-min').textContent = '00';
+      document.getElementById('cd-seg').textContent = '00';
+      return;
+    }
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seg = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-dias').textContent = String(dias).padStart(2, '0');
+    document.getElementById('cd-horas').textContent = String(horas).padStart(2, '0');
+    document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
+    document.getElementById('cd-seg').textContent = String(seg).padStart(2, '0');
+  }
+
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+</script>
 
 <body>
 
@@ -1079,7 +1108,7 @@
     <div class="hero-content">
       <div class="hero-tag">
         <i class="fas fa-fire"></i>
-        1ª Edição — João Câmara/RN
+        1ª Edição 2026 — João Câmara/RN
       </div>
       <h1 class="hero-title">
         <span class="line1">Pizza</span>
@@ -1088,7 +1117,7 @@
       </h1>
       <p class="hero-subtitle">
         Networking que tem sabor. Conhecimento que gera resultado.<br>
-        O empreendedorismo se encontra aqui.
+        Os Negócios se encontra aqui.
       </p>
 
       <div class="hero-info">
@@ -1110,7 +1139,7 @@
         <p class="countdown-label">⏳ Contagem regressiva para o evento</p>
         <div class="countdown">
           <div class="cd-block">
-            <div class="cd-num" id="cd-dias">00</div>
+            <div class="cd-num" id="cd-dias">15</div>
             <div class="cd-unit">Dias</div>
           </div>
           <div class="cd-block">
