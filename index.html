@@ -647,15 +647,20 @@
     }
 
     .pal-avatar {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      object-fit: cover;
+      background: linear-gradient(135deg, var(--vermelho), var(--laranja));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
       margin: 0 auto 1rem;
       border: 2px solid rgba(212, 160, 23, 0.3);
       position: relative;
       z-index: 1;
-      display: block;
     }
 
     .pal-name {
@@ -886,16 +891,10 @@
       text-align: center;
     }
 
-    .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-      color: var(--dourado);
+    .footer-logo img {
+      height: 80px;
+      width: auto;
       margin-bottom: 0.5rem;
-    }
-
-    .footer-logo span {
-      color: var(--laranja);
     }
 
     .footer-slogan {
@@ -1256,31 +1255,31 @@
         compartilhar o caminho.</p>
       <div class="palestrantes-grid">
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="fernando.png" alt="Fernando Câmara" />
+          <div class="pal-avatar">FC</div>
           <div class="pal-name">Fernando Câmara</div>
           <div class="pal-role">Fundador</div>
           <div class="pal-empresa">Vox2You</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="jairand.png" alt="Jairan Dionizio" />
+          <div class="pal-avatar">JD</div>
           <div class="pal-name">Jairan Dionizio</div>
           <div class="pal-role">Empreendedor</div>
           <div class="pal-empresa">Região do Mato Grande</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="michelev.png" alt="Michele Venâncio" />
+          <div class="pal-avatar">MV</div>
           <div class="pal-name">Michele Venâncio</div>
           <div class="pal-role">Empreendedora</div>
           <div class="pal-empresa">Região do Mato Grande</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="anderson.png" alt="Anderson Bruno" />
+          <div class="pal-avatar">AB</div>
           <div class="pal-name">Anderson Bruno</div>
           <div class="pal-role">Empreendedor</div>
           <div class="pal-empresa">Região do Mato Grande</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="kaio.png" alt="Kaio Eduardo" />
+          <div class="pal-avatar">KE</div>
           <div class="pal-name">Kaio Eduardo</div>
           <div class="pal-role">Especialista Financeiro</div>
           <div class="pal-empresa">SICREDI</div>
@@ -1385,7 +1384,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">🍕 Pizza<span>Negócios</span></div>
+    <div class="footer-logo"><img src="logo_PcN_Sem_F.png" alt="Pizza com Negócios" /></div>
     <div class="footer-slogan">"O empreendedorismo se encontra aqui!"</div>
     <div class="footer-social">
       <a href="https://instagram.com/pizzacomnegocios" target="_blank" title="Instagram"><i
