@@ -883,6 +883,39 @@
       display: block;
     }
 
+    /* ── MAPA ── */
+    #local {
+      padding: 5rem 1.5rem;
+      background: var(--preto-medio);
+    }
+
+    .mapa-wrap {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 160, 23, 0.2);
+    }
+
+    .mapa-wrap iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+      display: block;
+    }
+
+    .mapa-endereco {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+    }
+
+    .mapa-endereco i {
+      color: var(--laranja);
+      margin-right: 0.4rem;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--preto-card);
@@ -1088,6 +1121,7 @@
       <li><a href="#palestrantes">Palestrantes</a></li>
       <li><a href="#ingressos">Ingressos</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#local">Local</a></li>
       <li><a href="https://wa.me/5584994989169" target="_blank" class="nav-cta">Garanta Já</a></li>
     </ul>
     <div class="hamburger" onclick="toggleMenu()">
@@ -1100,6 +1134,7 @@
     <a href="#palestrantes" onclick="toggleMenu()">Palestrantes</a>
     <a href="#ingressos" onclick="toggleMenu()">Ingressos</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#local" onclick="toggleMenu()">Local</a>
     <a href="https://wa.me/5584994989169" target="_blank" style="color: #25D366;">📲 Garantir Ingresso</a>
   </div>
 
@@ -1379,6 +1414,31 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- LOCAL -->
+  <section id="local">
+    <div class="container" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;">Onde vai acontecer</div>
+      <h2 class="section-title">Encontre o <em>local do evento</em></h2>
+      <div class="mapa-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.3!2d-35.5500!3d-5.5300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUi4gSmVyw7RuaW1vIEPDom1hcmEsIDk1MCwgSm_Do28gQ8OibWFyYSAtIFJOLCA1OTU1MC0wMDA!5e0!3m2!1spt-BR!2sbr!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <p class="mapa-endereco">
+        <i class="fas fa-map-marker-alt"></i>
+        R. Jerônimo Câmara, 950 — Celebrar Recepções, João Câmara - RN, 59550-000
+      </p>
+      <a href="https://www.google.com/maps/search/R.+Jerônimo+Câmara,+950,+João+Câmara+-+RN,+59550-000"
+        target="_blank"
+        style="display:inline-block;margin-top:1rem;font-size:0.85rem;color:var(--laranja);text-decoration:none;">
+        <i class="fas fa-external-link-alt"></i> Abrir no Google Maps
+      </a>
     </div>
   </section>
 
