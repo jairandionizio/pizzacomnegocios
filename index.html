@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizza com Negócios — 17 de Abril</title>
+  <title>Pizza com Negócios — 2ª Edição | 10 e 11 de Julho</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@700;900&display=swap"
@@ -12,16 +12,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --laranja: #FF6B00;
-      --vermelho: #8B0000;
-      --dourado: #D4A017;
-      --dourado-claro: #F5C842;
-      --preto: #0A0A0A;
-      --preto-card: #111111;
-      --preto-medio: #1A1A1A;
-      --cinza: #2A2A2A;
-      --texto: #F0E8D8;
-      --texto-suave: #B8A898;
+      --laranja: #A8002C;        /* bordô principal — substitui laranja */
+      --vermelho: #6B0018;       /* bordô profundo */
+      --dourado: #C9941A;        /* dourado rico */
+      --dourado-claro: #E8BF5A;  /* dourado champagne */
+      --preto: #080608;          /* preto quase puro com leve tom quente */
+      --preto-card: #100D0F;     /* card escuro com leve bordô */
+      --preto-medio: #18131A;    /* fundo de seções alternadas */
+      --cinza: #2A2028;          /* cinza com temperatura quente */
+      --texto: #F5EFE0;          /* creme suave — leitura confortável */
+      --texto-suave: #C4AFA0;    /* texto secundário com tom dourado-pele */
     }
 
     *,
@@ -43,14 +43,13 @@
       overflow-x: hidden;
     }
 
-    /* ── TEXTURA DE FUNDO ── */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(255, 107, 0, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 50%, rgba(107, 0, 24, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201, 148, 26, 0.07) 0%, transparent 50%);
       pointer-events: none;
       z-index: 0;
     }
@@ -137,7 +136,6 @@
       transition: all 0.3s;
     }
 
-    /* ── MOBILE NAV ── */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -183,8 +181,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at center top, rgba(139, 0, 0, 0.35) 0%, transparent 65%),
-        radial-gradient(ellipse at 70% 80%, rgba(255, 107, 0, 0.12) 0%, transparent 50%);
+        radial-gradient(ellipse at center top, rgba(107, 0, 24, 0.45) 0%, transparent 65%),
+        radial-gradient(ellipse at 70% 80%, rgba(201, 148, 26, 0.10) 0%, transparent 50%);
     }
 
     .hero-grid {
@@ -244,12 +242,14 @@
       -webkit-text-stroke: 2px var(--dourado);
     }
 
-    .hero-logo {
-      width: clamp(200px, 40vw, 380px);
+    .hero-pizza-img {
+      width: clamp(280px, 70vw, 640px);
       height: auto;
-      margin: 1.5rem auto;
+      margin: 1.2rem auto;
       display: block;
-      animation: fadeDown 0.8s 0.25s ease both;
+      border-radius: 12px;
+      animation: fadeDown 0.8s 0.2s ease both;
+      filter: drop-shadow(0 8px 40px rgba(107, 0, 24, 0.5));
     }
 
     .hero-subtitle {
@@ -293,7 +293,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--laranja), #E05500);
+      background: linear-gradient(135deg, var(--laranja), #6B0018);
       color: #fff;
       padding: 1rem 2.5rem;
       border-radius: 6px;
@@ -307,12 +307,12 @@
       align-items: center;
       gap: 0.6rem;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(255, 107, 0, 0.4);
+      box-shadow: 0 4px 24px rgba(168, 0, 44, 0.45);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255, 107, 0, 0.5);
+      box-shadow: 0 8px 32px rgba(201, 148, 26, 0.45);
     }
 
     .btn-secondary {
@@ -438,6 +438,24 @@
       margin: 0 auto;
     }
 
+    /* ── BADGE EDIÇÃO ── */
+    .edicao-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, rgba(107,0,24,0.7), rgba(201,148,26,0.25));
+      border: 1px solid rgba(201, 148, 26, 0.55);
+      color: var(--dourado-claro);
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      animation: fadeDown 0.6s ease both;
+    }
+
     /* ── SOBRE ── */
     #sobre {
       background: var(--preto-medio);
@@ -470,8 +488,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: linear-gradient(135deg, var(--vermelho), #5A0000);
-      border: 2px solid rgba(212, 160, 23, 0.4);
+      background: linear-gradient(135deg, #6B0018, #3A000D);
+      border: 2px solid rgba(201, 148, 26, 0.5);
       border-radius: 50%;
       width: 170px;
       height: 170px;
@@ -480,7 +498,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      box-shadow: 0 0 60px rgba(139, 0, 0, 0.4);
+      box-shadow: 0 0 60px rgba(107, 0, 24, 0.5), inset 0 0 30px rgba(201, 148, 26, 0.08);
     }
 
     .badge-num {
@@ -539,6 +557,126 @@
       font-size: 0.82rem;
       color: var(--texto-suave);
       line-height: 1.5;
+    }
+
+    /* ── LOCAL DESTAQUE (pousada) ── */
+    .pousada-banner {
+      background: linear-gradient(135deg, rgba(107,0,24,0.2), rgba(24,19,26,0.95));
+      border: 1px solid rgba(201,148,26,0.35);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .pousada-icon {
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+
+    .pousada-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--dourado-claro);
+      margin-bottom: 0.3rem;
+    }
+
+    .pousada-info p {
+      color: var(--texto-suave);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ── PROGRAMAÇÃO ── */
+    #programacao {
+      background: var(--preto);
+    }
+
+    .prog-dias {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .prog-dia {
+      background: var(--preto-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .prog-dia-header {
+      background: linear-gradient(135deg, #6B0018, #3A000D);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .prog-dia-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--dourado-claro);
+    }
+
+    .prog-dia-info {
+      flex: 1;
+    }
+
+    .prog-dia-info strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .prog-dia-info span {
+      font-size: 0.8rem;
+      color: rgba(240,232,216,0.7);
+    }
+
+    .prog-itens {
+      padding: 1.5rem;
+      list-style: none;
+    }
+
+    .prog-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .prog-item:last-child {
+      border-bottom: none;
+    }
+
+    .prog-hora {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--laranja);
+      min-width: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    .prog-desc {
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+      line-height: 1.5;
+    }
+
+    .prog-desc strong {
+      color: var(--texto);
+      display: block;
     }
 
     /* ── O QUE VOCÊ VAI ENCONTRAR ── */
@@ -656,6 +794,22 @@
       border: 2px solid rgba(212, 160, 23, 0.3);
       position: relative;
       z-index: 1;
+      background: var(--cinza);
+    }
+
+    .pal-avatar-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      border: 2px solid rgba(201, 148, 26, 0.35);
+      background: linear-gradient(135deg, #6B0018, #2A000A);
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     .pal-name {
@@ -686,11 +840,30 @@
       z-index: 1;
     }
 
+    /* ── EM BREVE banner ── */
+    .em-breve-banner {
+      background: rgba(212,160,23,0.08);
+      border: 1px dashed rgba(212,160,23,0.4);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .em-breve-banner p {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    .em-breve-banner strong {
+      color: var(--dourado);
+    }
+
     /* ── INGRESSOS ── */
     #ingressos {
       text-align: center;
       background:
-        radial-gradient(ellipse at center, rgba(139, 0, 0, 0.2) 0%, transparent 70%),
+        radial-gradient(ellipse at center, rgba(107, 0, 24, 0.22) 0%, transparent 70%),
         var(--preto);
     }
 
@@ -1004,7 +1177,6 @@
         opacity: 0;
         transform: translateY(-20px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -1012,21 +1184,14 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-      }
-
-      50% {
-        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8), 0 0 0 8px rgba(37, 211, 102, 0.1);
-      }
+      0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 4px 40px rgba(37, 211, 102, 0.8); }
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .reveal.visible {
@@ -1034,90 +1199,30 @@
       transform: translateY(0);
     }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVO ── */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .sobre-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .sobre-visual {
-        display: none;
-      }
-
-      .sobre-features {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-info {
-        gap: 1rem;
-      }
-
-      .hero-btns {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .ingresso-box {
-        padding: 2rem 1.5rem;
-      }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .prog-dias { grid-template-columns: 1fr; }
+      .sobre-features { grid-template-columns: 1fr; }
+      .ingresso-box { padding: 2rem 1.5rem; }
+      .pousada-banner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
-<script>
-  const evento = new Date('2026-04-17T19:00:00');
-
-  function atualizarContador() {
-    const agora = new Date();
-    const diff = evento - agora;
-
-    if (diff <= 0) {
-      document.getElementById('cd-dias').textContent = '00';
-      document.getElementById('cd-horas').textContent = '00';
-      document.getElementById('cd-min').textContent = '00';
-      document.getElementById('cd-seg').textContent = '00';
-      return;
-    }
-
-    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seg = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('cd-dias').textContent = String(dias).padStart(2, '0');
-    document.getElementById('cd-horas').textContent = String(horas).padStart(2, '0');
-    document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
-    document.getElementById('cd-seg').textContent = String(seg).padStart(2, '0');
-  }
-
-  atualizarContador();
-  setInterval(atualizarContador, 1000);
-</script>
 
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">🍕 Pizza com <span>Negócios</span></a>
+    <a class="nav-logo" href="#hero">🍕 <span>Pizza</span> com Negócios</a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#programacao">Programação</a></li>
       <li><a href="#palestrantes">Palestrantes</a></li>
-      <li><a href="#ingressos">Ingressos</a></li>
-      <li><a href="#faq">FAQ</a></li>
       <li><a href="#local">Local</a></li>
-      <li><a href="https://wa.me/5584994989169" target="_blank" class="nav-cta">Garanta Já</a></li>
+      <li><a href="#ingressos" class="nav-cta">Quero Participar</a></li>
     </ul>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -1125,12 +1230,11 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" onclick="toggleMenu()">Sobre o Evento</a>
+    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+    <a href="#programacao" onclick="toggleMenu()">Programação</a>
     <a href="#palestrantes" onclick="toggleMenu()">Palestrantes</a>
-    <a href="#ingressos" onclick="toggleMenu()">Ingressos</a>
-    <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#local" onclick="toggleMenu()">Local</a>
-    <a href="https://wa.me/5584994989169" target="_blank" style="color: #25D366;">📲 Garantir Ingresso</a>
+    <a href="#ingressos" onclick="toggleMenu()">Quero Participar</a>
   </div>
 
   <!-- HERO -->
@@ -1138,50 +1242,44 @@
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-content">
+      <div class="edicao-badge">🏆 2ª Edição — Agora com 2 dias!</div>
       <div class="hero-tag">
-        <i class="fas fa-fire"></i>
-        1ª Edição 2026 — João Câmara/RN
+        <i class="fas fa-calendar-alt"></i>
+        10 &amp; 11 de Julho de 2026
       </div>
-      <img src="logo_PcN_Sem_F.png" alt="Logo Pizza com Negócios" class="hero-logo" />
+      <img class="hero-pizza-img" src="pizza.PNG" alt="Pizza com Negócios — 2ª Edição" />
       <p class="hero-subtitle">
-        Networking que tem sabor. Conhecimento que gera resultado.<br>
-        Os negócios se encontra aqui!
+        O encontro que une empreendedores da região do Mato Grande em torno de boas conversas, networking de verdade e muita pizza. Agora em formato <strong style="color:var(--dourado)">imersivo de 2 dias</strong>.
       </p>
-
       <div class="hero-info">
-        <span class="hero-info-item"><i class="fas fa-calendar-alt"></i> 17 de Abril</span>
-        <span class="hero-info-item"><i class="fas fa-clock"></i> 19h</span>
-        <span class="hero-info-item"><i class="fas fa-map-marker-alt"></i> Celebrar Recepções</span>
+        <div class="hero-info-item">
+          <i class="fas fa-calendar-check"></i>
+          <span>10 e 11 de Julho</span>
+        </div>
+        <div class="hero-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Pousada Urca do Minhoto</span>
+        </div>
+        <div class="hero-info-item">
+          <i class="fas fa-map-pin"></i>
+          <span>São Bento do Norte — RN</span>
+        </div>
       </div>
-
       <div class="hero-btns">
-        <a href="https://wa.me/5584994989169" target="_blank" class="btn-primary">
-          <i class="fab fa-whatsapp"></i> Garantir Meu Ingresso
+        <a href="https://wa.me/5584994989169?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Pizza%20com%20Neg%C3%B3cios!" target="_blank" class="btn-primary">
+          <i class="fab fa-whatsapp"></i> Garantir Minha Vaga
         </a>
-        <a href="#sobre" class="btn-secondary">
-          <i class="fas fa-arrow-down"></i> Saber Mais
+        <a href="#programacao" class="btn-secondary">
+          <i class="fas fa-list-alt"></i> Ver Programação
         </a>
       </div>
-
       <div class="countdown-wrap">
-        <p class="countdown-label">⏳ Contagem regressiva para o evento</p>
+        <div class="countdown-label">Faltam para o evento</div>
         <div class="countdown">
-          <div class="cd-block">
-            <div class="cd-num" id="cd-dias">15</div>
-            <div class="cd-unit">Dias</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-horas">00</div>
-            <div class="cd-unit">Horas</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-min">00</div>
-            <div class="cd-unit">Min</div>
-          </div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-seg">00</div>
-            <div class="cd-unit">Seg</div>
-          </div>
+          <div class="cd-block"><div class="cd-num" id="cd-dias">--</div><div class="cd-unit">dias</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-horas">--</div><div class="cd-unit">horas</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-min">--</div><div class="cd-unit">min</div></div>
+          <div class="cd-block"><div class="cd-num" id="cd-seg">--</div><div class="cd-unit">seg</div></div>
         </div>
       </div>
     </div>
@@ -1192,39 +1290,45 @@
     <div class="container">
       <div class="sobre-grid">
         <div class="sobre-visual">
-          <div class="sobre-big-text">PIZZA<br>COM<br>NEGÓ<br>CIOS</div>
+          <div class="sobre-big-text">2ª<br>ED.</div>
           <div class="sobre-badge">
-            <div class="badge-num">17</div>
-            <div class="badge-text">ABRIL<br>2026<br>19H</div>
+            <div class="badge-num">2</div>
+            <div class="badge-text">dias de<br>imersão</div>
           </div>
         </div>
         <div>
           <div class="section-tag">Sobre o evento</div>
-          <h2 class="section-title">O evento que <em>mistura</em> pizza e resultado</h2>
+          <h2 class="section-title">O encontro que <em>transforma</em> negócios</h2>
           <p class="section-sub">
-            A primeira edição do Pizza com Negócios reúne os melhores empreendedores na região do Mato Grande para uma
-            noite de conhecimento, conexões reais e, claro, muita pizza!
+            Na 1ª edição o Pizza com Negócios mostrou que empreendedores da nossa região têm sede de conexão, conhecimento e crescimento. Agora a 2ª edição chega ainda maior — dois dias de imersão completa na Pousada Urca do Minhoto, em São Bento do Norte.
           </p>
+          <div class="pousada-banner reveal">
+            <div class="pousada-icon">🏡</div>
+            <div class="pousada-info">
+              <h3>Pousada Urca do Minhoto</h3>
+              <p>Localizada na Rua Praia do Farol, s/n, Centro — São Bento do Norte / RN (CEP 59590-000). Um ambiente acolhedor e exclusivo à beira-mar, perfeito para dois dias de imersão, networking e boas conversas ao redor de uma pizza.</p>
+            </div>
+          </div>
           <div class="sobre-features">
             <div class="feature-item reveal">
-              <div class="feature-icon">🧠</div>
-              <div class="feature-title">Conhecimento</div>
-              <div class="feature-desc">Conteúdo prático com quem já fez acontecer no mundo dos negócios.</div>
+              <div class="feature-icon">🍕</div>
+              <div class="feature-title">Pizza Inclusa</div>
+              <div class="feature-desc">A pizza faz parte da experiência — nos dois dias!</div>
             </div>
             <div class="feature-item reveal">
               <div class="feature-icon">🤝</div>
               <div class="feature-title">Networking</div>
-              <div class="feature-desc">Conexões que abrem portas e geram oportunidades reais para seu negócio.</div>
+              <div class="feature-desc">Conexões reais com os melhores empreendedores da região.</div>
             </div>
             <div class="feature-item reveal">
-              <div class="feature-icon">🍕</div>
-              <div class="feature-title">Muita Pizza</div>
-              <div class="feature-desc">Porque grandes ideias nascem em momentos descontraídos e saborosos.</div>
+              <div class="feature-icon">🎤</div>
+              <div class="feature-title">Palestras</div>
+              <div class="feature-desc">Conteúdo prático e inspirador de quem faz acontecer.</div>
             </div>
             <div class="feature-item reveal">
-              <div class="feature-icon">🚀</div>
-              <div class="feature-title">Crescimento</div>
-              <div class="feature-desc">Saia com estratégias concretas para elevar seu negócio ao próximo nível.</div>
+              <div class="feature-icon">🏨</div>
+              <div class="feature-title">Imersão 2 dias</div>
+              <div class="feature-desc">Experiência completa em formato de retiro de negócios.</div>
             </div>
           </div>
         </div>
@@ -1233,87 +1337,162 @@
   </section>
 
   <!-- O QUE VOCÊ VAI ENCONTRAR -->
-  <section id="encontrar">
-    <div class="container">
-      <div style="text-align:center;">
-        <div class="section-tag" style="justify-content:center;">O que você vai encontrar</div>
-        <h2 class="section-title">Seu próximo grande negócio <em>começa</em> em uma fatia</h2>
-        <p class="section-sub" style="margin:0 auto 0;">Uma noite completa para quem leva os negócios a sério.</p>
-      </div>
+  <section id="encontrar" style="background: var(--preto);">
+    <div class="container" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;">O que te espera</div>
+      <h2 class="section-title">Uma experiência <em>completa</em></h2>
+      <p class="section-sub" style="margin: 0 auto 0;">Dois dias pensados para você sair diferente de como chegou.</p>
       <div class="encontrar-grid">
         <div class="encontrar-card reveal">
-          <span class="enc-icon">🎤</span>
+          <span class="enc-icon">🎙️</span>
           <div class="enc-title">Palestras de Impacto</div>
-          <div class="enc-desc">Conteúdo direto ao ponto com empreendedores que transformaram realidades regionais.
-          </div>
+          <div class="enc-desc">Cases reais, estratégias práticas e aprendizados de quem empreende na nossa região.</div>
         </div>
         <div class="encontrar-card reveal">
-          <span class="enc-icon">🌐</span>
-          <div class="enc-title">Networking Real</div>
-          <div class="enc-desc">Conecte-se com quem está construindo o futuro no Mato Grande.</div>
-        </div>
-        <div class="encontrar-card reveal">
-          <span class="enc-icon">💡</span>
-          <div class="enc-title">Geração de Valor</div>
-          <div class="enc-desc">Insights e ferramentas que você pode aplicar no seu negócio imediatamente.</div>
+          <span class="enc-icon">🤝</span>
+          <div class="enc-title">Networking Intenso</div>
+          <div class="enc-desc">Dois dias de convivência geram conexões que a vida toda não consegue em uma noite.</div>
         </div>
         <div class="encontrar-card reveal">
           <span class="enc-icon">🍕</span>
-          <div class="enc-title">Muita Pizza</div>
-          <div class="enc-desc">Ambiente descontraído onde as melhores ideias e parcerias surgem naturalmente.</div>
+          <div class="enc-title">Pizza à Vontade</div>
+          <div class="enc-desc">Porque grandes ideias nascem em volta de uma boa pizza — nos dois dias!</div>
         </div>
         <div class="encontrar-card reveal">
-          <span class="enc-icon">🤲</span>
-          <div class="enc-title">Parcerias</div>
-          <div class="enc-desc">Oportunidades únicas de parceria e colaboração entre empresas da região.</div>
+          <span class="enc-icon">🏡</span>
+          <div class="enc-title">Ambiente Exclusivo</div>
+          <div class="enc-desc">A Pousada Urca do Minhoto oferece o espaço perfeito para desconectar do dia a dia e focar no que importa.</div>
         </div>
         <div class="encontrar-card reveal">
-          <span class="enc-icon">📈</span>
-          <div class="enc-title">Crescimento</div>
-          <div class="enc-desc">Estratégias validadas para escalar negócios no contexto do interior do RN.</div>
+          <span class="enc-icon">💡</span>
+          <div class="enc-title">Workshops Práticos</div>
+          <div class="enc-desc">Dinâmicas e atividades mão na massa para sair com ações concretas para o seu negócio.</div>
         </div>
+        <div class="encontrar-card reveal">
+          <span class="enc-icon">🌙</span>
+          <div class="enc-title">Noite de Confraternização</div>
+          <div class="enc-desc">Uma noite especial para relaxar, celebrar e fortalecer os laços com os colegas empreendedores.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMAÇÃO -->
+  <section id="programacao">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <div class="section-tag" style="justify-content:center;">Agenda do evento</div>
+        <h2 class="section-title">Programação <em>dos 2 dias</em></h2>
+        <p class="section-sub" style="margin:0 auto;">A programação detalhada será divulgada em breve. Confira a estrutura geral dos dois dias.</p>
+      </div>
+      <div class="prog-dias">
+        <!-- DIA 1 -->
+        <div class="prog-dia reveal">
+          <div class="prog-dia-header">
+            <div class="prog-dia-num">10</div>
+            <div class="prog-dia-info">
+              <strong>Quinta-feira</strong>
+              <span>Julho 2026 · São Bento do Norte</span>
+            </div>
+          </div>
+          <ul class="prog-itens">
+            <li class="prog-item">
+              <span class="prog-hora">14h</span>
+              <div class="prog-desc"><strong>Check-in &amp; Boas-vindas</strong>Chegada, acomodação e integração dos participantes.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">16h</span>
+              <div class="prog-desc"><strong>Abertura Oficial</strong>Apresentação do evento e dos palestrantes.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">18h</span>
+              <div class="prog-desc"><strong>1ª Rodada de Palestras</strong>Conteúdo, cases e aprendizados da 1ª edição.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">20h</span>
+              <div class="prog-desc"><strong>🍕 Jantar com Networking</strong>Pizza, conversas e conexões que ficam.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">22h</span>
+              <div class="prog-desc"><strong>Noite Livre / Confraternização</strong>Momento de descontração entre os participantes.</div>
+            </li>
+          </ul>
+        </div>
+        <!-- DIA 2 -->
+        <div class="prog-dia reveal">
+          <div class="prog-dia-header" style="background: linear-gradient(135deg, #5C3D00, #8B6000);">
+            <div class="prog-dia-num" style="color: var(--dourado-claro);">11</div>
+            <div class="prog-dia-info">
+              <strong>Sexta-feira</strong>
+              <span>Julho 2026 · São Bento do Norte</span>
+            </div>
+          </div>
+          <ul class="prog-itens">
+            <li class="prog-item">
+              <span class="prog-hora">08h</span>
+              <div class="prog-desc"><strong>Café da Manhã</strong>Início do dia com energia e disposição.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">09h</span>
+              <div class="prog-desc"><strong>2ª Rodada de Palestras</strong>Temas estratégicos para crescimento dos negócios.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">11h</span>
+              <div class="prog-desc"><strong>Workshop Prático</strong>Dinâmicas e atividades mão na massa.</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">13h</span>
+              <div class="prog-desc"><strong>🍕 Almoço &amp; Networking</strong>Pizza no almoço — porque por que não?</div>
+            </li>
+            <li class="prog-item">
+              <span class="prog-hora">15h</span>
+              <div class="prog-desc"><strong>Encerramento &amp; Próximos Passos</strong>Comprometimentos, celebração e despedida.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="em-breve-banner reveal">
+        <p>📋 <strong>Programação completa em breve!</strong> Siga <strong>@pizzacomnegocios</strong> no Instagram para não perder nenhuma novidade sobre palestrantes e atividades confirmados.</p>
       </div>
     </div>
   </section>
 
   <!-- PALESTRANTES -->
   <section id="palestrantes">
-    <div class="container" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;">Grandes nomes</div>
-      <h2 class="section-title">Quem vai <em>estar</em> lá</h2>
-      <p class="section-sub" style="margin:0 auto 3rem;">Empreendedores que construíram negócios reais e vieram
-        compartilhar o caminho.</p>
+    <div class="container">
+      <div style="text-align:center; margin-bottom:1rem;">
+        <div class="section-tag" style="justify-content:center;">Quem vai falar</div>
+        <h2 class="section-title">Palestrantes <em>em breve</em></h2>
+        <p class="section-sub" style="margin:0 auto;">Os nomes da 2ª edição estão sendo confirmados. Acompanhe as novidades!</p>
+      </div>
       <div class="palestrantes-grid">
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="fernando.png" alt="Fernando Câmara" />
-          <div class="pal-name">Fernando Câmara</div>
-          <div class="pal-role">Fundador</div>
-          <div class="pal-empresa">Vox2You</div>
+          <div class="pal-avatar-placeholder">🎤</div>
+          <div class="pal-name">Em Breve</div>
+          <div class="pal-role">Palestrante</div>
+          <div class="pal-empresa">A confirmar</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="jairand.png" alt="Jairan Dionizio" />
-          <div class="pal-name">Jairan Dionizio</div>
-          <div class="pal-role">Empreendedor</div>
-          <div class="pal-empresa">Região do Mato Grande</div>
+          <div class="pal-avatar-placeholder">🎤</div>
+          <div class="pal-name">Em Breve</div>
+          <div class="pal-role">Palestrante</div>
+          <div class="pal-empresa">A confirmar</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="michelev.png" alt="Michele Venâncio" />
-          <div class="pal-name">Michele Venâncio</div>
-          <div class="pal-role">Empreendedora</div>
-          <div class="pal-empresa">Região do Mato Grande</div>
+          <div class="pal-avatar-placeholder">🎤</div>
+          <div class="pal-name">Em Breve</div>
+          <div class="pal-role">Palestrante</div>
+          <div class="pal-empresa">A confirmar</div>
         </div>
         <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="anderson.png" alt="Anderson Bruno" />
-          <div class="pal-name">Anderson Bruno</div>
-          <div class="pal-role">Empreendedor</div>
-          <div class="pal-empresa">Região do Mato Grande</div>
+          <div class="pal-avatar-placeholder">🎤</div>
+          <div class="pal-name">Em Breve</div>
+          <div class="pal-role">Palestrante</div>
+          <div class="pal-empresa">A confirmar</div>
         </div>
-        <div class="palestrante-card reveal">
-          <img class="pal-avatar" src="kaio.png" alt="Kaio Eduardo" />
-          <div class="pal-name">Kaio Eduardo</div>
-          <div class="pal-role">Especialista Financeiro</div>
-          <div class="pal-empresa">SICREDI</div>
-        </div>
+      </div>
+      <div class="em-breve-banner reveal" style="margin-top:2rem;">
+        <p>🔔 Os palestrantes da 2ª edição serão anunciados em breve. Siga <strong>@pizzacomnegocios</strong> para ser o primeiro a saber!</p>
       </div>
     </div>
   </section>
@@ -1324,23 +1503,22 @@
       <div style="text-align:center; margin-bottom:3rem;">
         <div class="section-tag" style="justify-content:center;">Garanta sua vaga</div>
         <h2 class="section-title">Vagas <em>limitadas</em></h2>
-        <p class="section-sub" style="margin:0 auto;">Não deixe para amanhã o que pode transformar seu negócio hoje.</p>
+        <p class="section-sub" style="margin:0 auto;">Dois dias, um lugar exclusivo. As vagas são poucas — não deixe para depois.</p>
       </div>
       <div class="ingresso-box reveal">
-        <div class="ingresso-destaque">🍕 1ª Edição — Pizza com Negócios</div>
-        <h3 class="ingresso-titulo">Sua vaga está esperando por você</h3>
-        <p class="ingresso-sub">Entre em contato pelo WhatsApp ou Instagram e garanta sua participação nesse evento
-          histórico para o empreendedorismo da região.</p>
+        <div class="ingresso-destaque">🍕 2ª Edição — Pizza com Negócios</div>
+        <h3 class="ingresso-titulo">Garanta sua vaga agora</h3>
+        <p class="ingresso-sub">Entre em contato pelo WhatsApp ou Instagram e reserve sua participação nessa imersão exclusiva para empreendedores da região.</p>
         <ul class="ingresso-lista">
-          <li><i class="fas fa-check-circle"></i> Acesso à noite de palestras e conteúdo</li>
-          <li><i class="fas fa-check-circle"></i> Networking com os melhores empreendedores da região</li>
-          <li><i class="fas fa-check-circle"></i> Pizza à vontade durante o evento</li>
-          <li><i class="fas fa-check-circle"></i> 17 de Abril | 19h | Celebrar Recepções</li>
-          <li><i class="fas fa-check-circle"></i> João Câmara — RN</li>
+          <li><i class="fas fa-check-circle"></i> 2 dias de imersão completa</li>
+          <li><i class="fas fa-check-circle"></i> Palestras e workshops práticos</li>
+          <li><i class="fas fa-check-circle"></i> Networking com empreendedores da região</li>
+          <li><i class="fas fa-check-circle"></i> Pizza inclusa (nos dois dias!)</li>
+          <li><i class="fas fa-check-circle"></i> 10 e 11 de Julho | Pousada Urca do Minhoto</li>
+          <li><i class="fas fa-check-circle"></i> Rua Praia do Farol, s/n — Centro, São Bento do Norte / RN</li>
         </ul>
         <div class="ingresso-btns">
-          <a href="https://wa.me/5584994989169?text=Ol%C3%A1!%20Quero%20garantir%20meu%20ingresso%20para%20o%20Pizza%20com%20Neg%C3%B3cios!"
-            target="_blank" class="btn-whatsapp">
+          <a href="https://wa.me/5584994989169?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Pizza%20com%20Neg%C3%B3cios!" target="_blank" class="btn-whatsapp">
             <i class="fab fa-whatsapp"></i> Garantir pelo WhatsApp
           </a>
           <a href="https://instagram.com/pizzacomnegocios" target="_blank" class="btn-insta">
@@ -1355,7 +1533,7 @@
   <section id="faq">
     <div class="container" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Dúvidas frequentes</div>
-      <h2 class="section-title">Perguntas <em>& Respostas</em></h2>
+      <h2 class="section-title">Perguntas <em>&amp; Respostas</em></h2>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
@@ -1363,8 +1541,16 @@
             <i class="fas fa-plus"></i>
           </button>
           <div class="faq-answer">
-            O Pizza com Negócios acontece no dia <strong>17 de abril de 2026 às 19h</strong>, no <strong>Celebrar
-              Recepções</strong>, em João Câmara/RN. Um espaço perfeito para uma noite inesquecível de negócios e pizza!
+            A 2ª edição do Pizza com Negócios acontece nos dias <strong>10 e 11 de julho de 2026</strong> na <strong>Pousada Urca do Minhoto</strong>, em São Bento do Norte — RN. Uma experiência imersiva de dois dias para empreendedores da região!
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Por que agora são 2 dias?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            A 1ª edição mostrou que o potencial dos nossos empreendedores é enorme e que uma noite não é suficiente para tudo que queremos compartilhar. A 2ª edição chega em formato de <strong>imersão</strong> — dois dias para aprofundar conexões, absorver mais conteúdo e viver uma experiência completa.
           </div>
         </div>
         <div class="faq-item">
@@ -1373,39 +1559,34 @@
             <i class="fas fa-plus"></i>
           </button>
           <div class="faq-answer">
-            Simples! Basta entrar em contato pelo <strong>WhatsApp (84) 9 9498-9169</strong> ou enviar uma mensagem no
-            Instagram <strong>@pizzacomnegocios</strong>. As vagas são limitadas, então não deixe para a última hora!
+            É simples! Basta entrar em contato pelo <strong>WhatsApp (84) 9 9498-9169</strong> ou enviar uma mensagem no Instagram <strong>@pizzacomnegocios</strong>. As vagas são limitadas, então não deixe para a última hora!
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            O evento é apenas para João Câmara ou posso vir de outras cidades?
+            O evento é apenas para moradores de São Bento do Norte?
             <i class="fas fa-plus"></i>
           </button>
           <div class="faq-answer">
-            O evento é voltado para empresários e empreendedores de <strong>João Câmara e toda a região do Mato
-              Grande</strong>. Venha de onde vier — se você tem um negócio ou quer empreender, esse evento é para você!
+            Não! O evento é para empresários e empreendedores de <strong>toda a região do Mato Grande e do RN</strong>. Venha de onde vier — se você tem um negócio ou quer empreender, esse evento é para você!
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            A pizza está inclusa no ingresso?
+            A pizza está inclusa?
             <i class="fas fa-plus"></i>
           </button>
           <div class="faq-answer">
-            Sim! 🍕 A pizza faz parte da experiência. Você vai ter acesso às palestras, ao networking e à pizza — tudo
-            junto, tudo numa noite só. Afinal, o nome não é à toa!
+            Claro! 🍕 A pizza faz parte da experiência — <strong>nos dois dias</strong>. Afinal, o nome não é à toa. Você vai ter acesso às palestras, networking e muita pizza!
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Quem são os palestrantes?
+            Preciso me hospedar na pousada?
             <i class="fas fa-plus"></i>
           </button>
           <div class="faq-answer">
-            Teremos <strong>Fernando Câmara</strong> (fundador da Vox2You), <strong>Jairan Dionizio</strong>,
-            <strong>Michele Venâncio</strong>, <strong>Anderson Bruno</strong> e <strong>Kaio Eduardo</strong> do
-            SICREDI. Grandes nomes com histórias reais de empreendedorismo na nossa região.
+            Informações sobre hospedagem serão divulgadas em breve. Entre em contato pelo WhatsApp para obter todos os detalhes sobre o pacote completo do evento, incluindo opções de acomodação.
           </div>
         </div>
       </div>
@@ -1416,18 +1597,19 @@
   <section id="local">
     <div class="container" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Onde vai acontecer</div>
-      <h2 class="section-title">Encontre o <em>local do evento</em></h2>
+      <h2 class="section-title">Pousada <em>Urca do Minhoto</em></h2>
+      <p style="color:var(--texto-suave); margin-bottom:2rem; font-size:0.95rem;">São Bento do Norte — RN</p>
       <div class="mapa-wrap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.3!2d-35.5500!3d-5.5300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUi4gSmVyw7RuaW1vIEPDom1hcmEsIDk1MCwgSm_Do28gQ8OibWFyYSAtIFJOLCA1OTU1MC0wMDA!5e0!3m2!1spt-BR!2sbr!4v1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2!2d-35.9717!3d-5.1178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUG91c2FkYSBVcmNhIGRvIE1pbmhvdG8sIFJ1YSBQcmFpYSBkbyBGYXJvbCwgcy9uLCBDZW50cm8sIFPDo28gQmVudG8gZG8gTm9ydGUgLSBSTiwgNTk1OTAtMDAw!5e0!3m2!1spt-BR!2sbr!4v1"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
       <p class="mapa-endereco">
         <i class="fas fa-map-marker-alt"></i>
-        R. Jerônimo Câmara, 950 — Celebrar Recepções, João Câmara - RN, 59550-000
+        Rua Praia do Farol (Estrada do Farol), s/n — Centro, São Bento do Norte / RN &nbsp;·&nbsp; CEP 59590-000
       </p>
-      <a href="https://www.google.com/maps/search/R.+Jerônimo+Câmara,+950,+João+Câmara+-+RN,+59550-000" target="_blank"
+      <a href="https://www.google.com/maps/search/Pousada+Urca+do+Minhoto+Rua+Praia+do+Farol+São+Bento+do+Norte+RN+59590-000" target="_blank"
         style="display:inline-block;margin-top:1rem;font-size:0.85rem;color:var(--laranja);text-decoration:none;">
         <i class="fas fa-external-link-alt"></i> Abrir no Google Maps
       </a>
@@ -1437,30 +1619,28 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo"><img src="logo_PcN_Sem_F.png" alt="Pizza com Negócios" /></div>
-    <div class="footer-slogan">"Os negócios se encontra aqui!"</div>
+    <div class="footer-slogan">"Os negócios se encontram aqui!"</div>
     <div class="footer-social">
-      <a href="https://instagram.com/pizzacomnegocios" target="_blank" title="Instagram"><i
-          class="fab fa-instagram"></i></a>
+      <a href="https://instagram.com/pizzacomnegocios" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/5584994989169" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <div class="footer-info">
-      <strong>📅 17 de Abril de 2026 · 19h</strong><br>
-      📍 Celebrar Recepções — João Câmara/RN<br>
+      <strong>📅 10 e 11 de Julho de 2026</strong><br>
+      📍 Pousada Urca do Minhoto — Rua Praia do Farol, s/n, Centro, São Bento do Norte / RN · CEP 59590-000<br>
       📲 (84) 9 9498-9169 · @pizzacomnegocios
     </div>
-    <div class="footer-copy">© 2026 Pizza com Negócios · Todos os direitos reservados</div>
+    <div class="footer-copy">© 2026 Pizza com Negócios · 2ª Edição · Todos os direitos reservados</div>
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
-  <a href="https://wa.me/5584994989169?text=Ol%C3%A1!%20Quero%20garantir%20meu%20ingresso%20para%20o%20Pizza%20com%20Neg%C3%B3cios!"
-    target="_blank" class="wa-float" title="Fale no WhatsApp">
+  <a href="https://wa.me/5584994989169?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20na%202%C2%AA%20edi%C3%A7%C3%A3o%20do%20Pizza%20com%20Neg%C3%B3cios!" target="_blank" class="wa-float" title="Fale no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <script>
     // ── COUNTDOWN ──
     function updateCountdown() {
-      const target = new Date('2026-04-17T19:00:00-03:00');
+      const target = new Date('2026-07-10T14:00:00-03:00');
       const now = new Date();
       const diff = target - now;
 
@@ -1520,5 +1700,4 @@
     });
   </script>
 </body>
-
 </html>
